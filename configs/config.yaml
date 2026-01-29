@@ -1,0 +1,92 @@
+# @package _global_
+
+# Default configuration for 3D Shape Completion
+defaults:
+  - _self_
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+
+# Project settings
+project_name: "3d_shape_completion"
+experiment_name: "pointnet_plus_plus"
+
+# Data settings
+data:
+  train_samples: 800
+  val_samples: 200
+  test_samples: 100
+  num_points: 2048
+  completion_ratio: 0.7
+  noise_std: 0.01
+  shapes: ["sphere", "cube", "cylinder", "cone", "torus"]
+
+# Model settings
+model:
+  name: "pointnet_plus_plus"
+  num_classes: 3
+  normal_channel: false
+  dropout: 0.5
+
+# Training settings
+training:
+  batch_size: 16
+  num_epochs: 100
+  learning_rate: 0.001
+  weight_decay: 1e-4
+  scheduler: "cosine"
+  warmup_epochs: 10
+  gradient_clip_norm: 1.0
+  mixed_precision: true
+  accumulate_grad_batches: 1
+
+# Loss settings
+loss:
+  chamfer_weight: 1.0
+  emd_weight: 0.1
+  l2_weight: 0.1
+
+# Evaluation settings
+evaluation:
+  metrics: ["chamfer_distance", "emd", "f1_score"]
+  f1_threshold: 0.01
+  save_predictions: true
+
+# Data augmentation
+augmentation:
+  rotation_range: [0, 6.28]  # 0 to 2π
+  translation_range: [-0.1, 0.1]
+  scale_range: [0.9, 1.1]
+  jitter_std: 0.01
+
+# Paths
+paths:
+  data_dir: "data"
+  checkpoint_dir: "checkpoints"
+  log_dir: "logs"
+  asset_dir: "assets"
+  demo_dir: "demo"
+
+# Logging
+logging:
+  log_every_n_steps: 10
+  val_check_interval: 1.0
+  save_top_k: 3
+  monitor: "val_loss"
+  mode: "min"
+
+# Reproducibility
+seed: 42
+
+# Device settings
+device:
+  auto: true
+  cuda: true
+  mps: true
+  cpu: true
+
+# Wandb settings (optional)
+wandb:
+  enabled: false
+  project: "3d-shape-completion"
+  entity: null
+  tags: ["pointnet", "3d", "completion"]

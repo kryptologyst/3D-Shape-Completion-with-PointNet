@@ -1,0 +1,37 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+pandas>=2.0.0
+tqdm>=4.65.0
+matplotlib>=3.7.0
+plotly>=5.15.0
+tensorboard>=2.13.0
+
+# 3D/Geometry specific
+open3d>=0.17.0
+pytorch3d>=0.7.4
+trimesh>=3.23.0
+kornia>=0.7.0
+opencv-python>=4.8.0
+
+# Configuration and utilities
+omegaconf>=2.3.0
+hydra-core>=1.3.0
+pyyaml>=6.0
+black>=23.0.0
+ruff>=0.0.280
+pre-commit>=3.3.0
+
+# Demo and visualization
+streamlit>=1.25.0
+gradio>=3.40.0
+
+# Optional: tracking and serving
+wandb>=0.15.0
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
