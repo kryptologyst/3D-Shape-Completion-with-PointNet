@@ -18,8 +18,8 @@ A production-ready implementation of 3D shape completion using PointNet++ archit
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/kryptologyst/3D-Shape-Completion-with-PointNet-.git
-cd 3D-Shape-Completion-with-PointNet-
+git clone https://github.com/kryptologyst/3D-Shape-Completion-with-PointNet.git
+cd 3D-Shape-Completion-with-PointNet
 ```
 
 2. Install dependencies:
@@ -285,7 +285,7 @@ If you use this code in your research, please cite:
   title={3D Shape Completion with PointNet++},
   author={Kryptologyst},
   year={2026},
-  url={https://github.com/kryptologyst/3D-Shape-Completion-with-PointNet-}
+  url={https://github.com/kryptologyst/3D-Shape-Completion-with-PointNet}
 }
 ```
 
@@ -296,3 +296,4 @@ If you use this code in your research, please cite:
 - PyTorch team for the deep learning framework
 - Streamlit for the interactive demo interface
 # 3D-Shape-Completion-with-PointNet-
+# 3D-Shape-Completion-with-PointNet
