@@ -9,8 +9,8 @@ plotly>=5.15.0
 tensorboard>=2.13.0
 
 # 3D/Geometry specific
-open3d>=0.17.0
-pytorch3d>=0.7.4
+# open3d>=0.17.0
+# pytorch3d>=0.7.4
 trimesh>=3.23.0
 kornia>=0.7.0
 opencv-python>=4.8.0
